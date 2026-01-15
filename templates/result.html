@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Result Found</h2>
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" class="preview-img">
+
+    <div style="background: #f1f2f6; border-radius: 20px; padding: 20px;">
+        <h1 style="color: var(--primary); margin: 0;">{{ label }}</h1>
+        <p style="margin: 10px 0 0 0;">Confidence Level: <strong>{{ probability }}%</strong></p>
+        <div style="width: 100%; background: #dfe4ea; height: 10px; border-radius: 5px; margin-top: 15px;">
+            <div style="width: {{ probability }}%; background: var(--primary); height: 100%; border-radius: 5px;"></div>
+        </div>
+    </div>
+
+    <a href="{{ url_for('upload_page') }}" class="btn" style="background: var(--dark);">Try Another</a>
+</div>
+{% endblock %}

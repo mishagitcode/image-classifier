@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+:root {
+    --primary: #2ecc71;
+    --secondary: #ff4757;
+    --dark: #2f3542;
+    --glass: rgba(255, 255, 255, 0.95);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    /* Animated Gradient Background */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Responsive Container */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Adaptive Card */
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px; /* Desktop limit */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Typography & Buttons */
+h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--dark); }
+p { color: #57606f; font-size: 1.1rem; line-height: 1.5; }
+
+.btn {
+    display: block;
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 18px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 20px;
+}
+
+.btn:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3); }
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .card { padding: 30px 20px; border-radius: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+    h1 { font-size: 2rem; }
+}
+
+/* Specific UI Elements */
+.upload-box {
+    border: 2px dashed #d2dae2;
+    padding: 40px 20px;
+    border-radius: 20px;
+    margin: 25px 0;
+    transition: 0.3s;
+    background: rgba(241, 242, 246, 0.5);
+}
+.upload-box:hover { border-color: var(--primary); background: white; }
+.preview-img { width: 100%; border-radius: 20px; margin-bottom: 20px; object-fit: cover; max-height: 300px; }
