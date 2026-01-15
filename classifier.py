@@ -7,6 +7,7 @@ THRESHOLD = 0.5
 
 def preprocess_image(image):
     img_array = tf.keras.preprocessing.image.img_to_array(image)
+    img_array = img_array / 255.0
     img_array = tf.expand_dims(img_array, 0)
 
     return img_array
