@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <div style="font-size: 4rem;">🍎 vs 🍐</div>
+    <h1>Image Classifier</h1>
+    <p>Upload an image and let the neural network do the rest.</p>
+    <a href="{{ url_for('upload_page') }}" class="btn">Get Started</a>
+</div>
+{% endblock %}

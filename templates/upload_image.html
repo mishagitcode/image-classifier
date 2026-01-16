@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Identify Fruit</h2>
+    <p>Upload a clear photo of your fruit.</p>
+
+    <form action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">
+        <div class="upload-box" onclick="document.getElementById('fileInput').click()">
+            <span style="font-size: 3rem; display: block;">📂</span>
+            <span id="nameText" style="font-weight: 600; color: #747d8c;">Select Image</span>
+            <input type="file" id="fileInput" name="image" hidden onchange="updateLabel()">
+        </div>
+        <button type="submit" class="btn">Analyze Photo</button>
+    </form>
+</div>
+
+<script>
+    function updateLabel() {
+        const input = document.getElementById('fileInput');
+        document.getElementById('nameText').innerText = input.files[0].name;
+    }
+</script>
+{% endblock %}
